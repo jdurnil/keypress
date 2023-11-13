@@ -10,8 +10,9 @@ public class test : MonoBehaviour
     private Object interactableView;
 
     private IInteractableView interactableViewInterface;
-    public float speed = 20f;
     public Animator testanim;
+    public AudioSource audioSource;
+    public AudioClip sound;
     private bool isPressed = false;
     // Start is called before the first frame update
     void Start()
@@ -24,16 +25,19 @@ public class test : MonoBehaviour
     {
         Debug.Log(interactableViewInterface.State);
         
-        if(interactableViewInterface.State == InteractableState.Select && isPressed==false) {
-            //testanim.SetTrigger("Press");
-            transform.Rotate(7, 0, 0);
-            isPressed = true;
-        }
-        
-        if(interactableViewInterface.State == InteractableState.Normal && isPressed == true)
+        // Use the commented line instead after the equal to use the hover instead of selected
+        if(interactableViewInterface.State == InteractableState.Select) //InteractableState.Hover) 
         {
-            transform.Rotate(-7, 0, 0);
+            if(!isPressed)
+                audioSource.PlayOneShot(sound);
+
+            isPressed = true;
+        } // if you use the Hover I suggest uncomment this line, if you are happy with Select state leave this line commented
+        else //if(interactableViewInterface.State == InteractableState.Normal) 
+        {
             isPressed = false;
         }
+        
+        testanim.SetBool("Pressed", isPressed);
     }
 }
