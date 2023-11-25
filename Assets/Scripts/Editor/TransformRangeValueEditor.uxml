@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Scripts/Editor/TransformRangeValueEditor.uss?fileID=7433441132597879392&amp;guid=87104032853e50a4db350a355586d8a9&amp;type=3#TransformRangeValueEditor" />
+    <ui:VisualElement name="container" style="flex-grow: 1;">
+        <uie:ObjectField label="Script" focusable="false" name="scriptReference" />
+        <ui:Toggle label="Use reference for start" name="useRefStart" binding-path="useRefStart" class="toggle" />
+        <uie:ObjectField label="Start Position Ref" name="startPositionTransform" binding-path="startPositionTransform" type="UnityEngine.Transform, UnityEngine.CoreModule" />
+        <ui:Vector3Field label="Start Position" binding-path="startPosition" name="startPosition" />
+        <ui:Button text="Set Start Position" parse-escape-sequences="true" display-tooltip-when-elided="true" name="setStartPosition" />
+        <ui:Toggle label="Use reference for end" name="useRefEnd" binding-path="useRefEnd" class="toggle" />
+        <uie:ObjectField label="End Position Ref" name="endPositionTransform" binding-path="endPositionTransform" type="UnityEngine.Transform, UnityEngine.CoreModule" />
+        <ui:Vector3Field label="End Position" binding-path="endPosition" name="endPosition" />
+        <ui:Button text="Set End Position" parse-escape-sequences="true" display-tooltip-when-elided="true" name="setEndPosition" />
+        <ui:Slider picking-mode="Ignore" label="Fader Value" value="0" high-value="1" binding-path="faderValue" show-input-field="true" name="faderValue" />
+        <uie:PropertyField name="onValueChange" binding-path="OnFaderValueChanged" />
+    </ui:VisualElement>
+</ui:UXML>

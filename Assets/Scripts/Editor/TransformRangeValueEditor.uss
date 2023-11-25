@@ -1,0 +1,9 @@
+#container {
+    flex-grow: 1;
+}
+
+.toggle {
+    justify-content: flex-start;
+    align-self: auto;
+    align-items: auto;
+}
