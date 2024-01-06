@@ -23,23 +23,44 @@ public class Listener : MonoBehaviour
      
 
         Debug.Log(message);
-       
-        
-        
+
+
+        var channelstring = message.Address.Split('/')[3];
+        int channel;
+        bool succeed = int.TryParse(channelstring, out channel);
 
         if (message.Address.Contains("volume"))
         {
             float value;
 
             message.ToFloat(out value);
-            var channelstring = message.Address.Split('/')[3];
-            int channel;
-            bool succeed = int.TryParse(channelstring, out channel);
+           
             if(channelstring != "master" && succeed)
             {
                 dispatcher.OnVolumeEvent.Invoke(channel, value);
             }
+        } else if (message.Address.Contains("level-l"))
+        {
+            float value;
+
+            message.ToFloat(out value);
+            
+            if (channelstring != "master" && succeed)
+            {
+                dispatcher.OnLevelLEvent.Invoke(channel, value);
+            }
+        } else if (message.Address.Contains("level-r"))
+        {
+            float value;
+
+            message.ToFloat(out value);
+            
+            if (channelstring != "master" && succeed)
+            {
+                dispatcher.OnLevelREvent.Invoke(channel, value);
+            }
         }
+
         
     }
 
