@@ -24,42 +24,81 @@ public class Listener : MonoBehaviour
 
         Debug.Log(message);
 
-
-        var channelstring = message.Address.Split('/')[3];
-        int channel;
-        bool succeed = int.TryParse(channelstring, out channel);
-
-        if (message.Address.Contains("volume"))
+        var addresschannelArray = message.Address.Split('/');
+        if(addresschannelArray.Length > 3)
         {
-            float value;
+            var channelstring = addresschannelArray[3];
+            int channel;
+            bool succeed = int.TryParse(channelstring, out channel);
 
-            message.ToFloat(out value);
-           
-            if(channelstring != "master" && succeed)
+            if (message.Address.Contains("volume"))
             {
-                dispatcher.OnVolumeEvent.Invoke(channel, value);
+                float value;
+
+                message.ToFloat(out value);
+
+                if (channelstring != "master" && succeed)
+                {
+                    dispatcher.OnVolumeEvent.Invoke(channel, value);
+                }
             }
-        } else if (message.Address.Contains("level-l"))
-        {
-            float value;
-
-            message.ToFloat(out value);
-            
-            if (channelstring != "master" && succeed)
+            else if (message.Address.Contains("level-l-real"))
             {
-                dispatcher.OnLevelLEvent.Invoke(channel, value);
+                float value = 0;
+
+                message.ToFloat(out value);
+
+
+                if (channelstring != "master" && succeed)
+                {
+                    value = value / .2f;
+                    dispatcher.OnLevelLEvent.Invoke(channel, value);
+                }
             }
-        } else if (message.Address.Contains("level-r"))
-        {
-            float value;
-
-            message.ToFloat(out value);
-            
-            if (channelstring != "master" && succeed)
+            else if (message.Address.Contains("level-r-real"))
             {
-                dispatcher.OnLevelREvent.Invoke(channel, value);
+                float value = 0;
+
+                message.ToFloat(out value);
+
+                if (channelstring != "master" && succeed)
+                {
+                    value = value / .2f;
+                    dispatcher.OnLevelREvent.Invoke(channel, value);
+                }
             }
         }
+        else
+        {
+            if (message.Address.Contains("volume"))
+            {
+                float value;
+
+                message.ToFloat(out value);
+
+                dispatcher.OnVolumeEvent.Invoke(0, value);
+            }
+            else if (message.Address.Contains("level-l") && !message.Address.Contains("level-l-real"))
+            {
+                float value = 0;
+
+                message.ToFloat(out value);
+
+
+                value = value / .1f;
+                dispatcher.OnLevelLEvent.Invoke(0, value);
+            }
+            else if (message.Address.Contains("level-r") && !message.Address.Contains("level-r-real"))
+            {
+                float value = 0;
+
+                message.ToFloat(out value);
+
+                value = value / .1f;
+                dispatcher.OnLevelREvent.Invoke(0, value);
+            }
+        }
+       
 
         
     }
