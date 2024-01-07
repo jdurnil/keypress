@@ -121,11 +121,31 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.burst": {
+      "version": "1.8.11",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.collab-proxy": {
       "version": "2.2.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.dt.app-ui": {
+      "version": "1.0.0-pre.3",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.androidjni": "1.0.0",
+        "com.unity.modules.uielements": "1.0.0",
+        "com.unity.modules.physics": "1.0.0"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.editorcoroutines": {
@@ -181,9 +201,67 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.mathematics": {
+      "version": "1.2.6",
+      "depth": 3,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.muse.common": {
+      "version": "1.0.0-pre.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.dt.app-ui": "1.0.0-pre.3",
+        "com.unity.burst": "1.8.7",
+        "com.unity.settings-manager": "2.0.1",
+        "com.unity.modules.imageconversion": "1.0.0",
+        "com.unity.modules.unitywebrequesttexture": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.muse.sprite": {
+      "version": "1.0.0-pre.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0",
+        "com.unity.muse.common": "1.0.0-pre.3"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.muse.texture": {
+      "version": "1.0.0-pre.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.muse.common": "1.0.0-pre.3",
+        "com.unity.shadergraph": "14.0.7"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.performance.profile-analyzer": {
       "version": "1.2.2",
       "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.render-pipelines.core": {
+      "version": "14.0.9",
+      "depth": 2,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.terrain": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.searcher": {
+      "version": "4.9.2",
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -194,6 +272,15 @@
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
+    },
+    "com.unity.shadergraph": {
+      "version": "14.0.9",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "14.0.9",
+        "com.unity.searcher": "4.9.2"
+      }
     },
     "com.unity.sysroot": {
       "version": "2.0.7",
