@@ -32,7 +32,7 @@ public class EventOut : MonoBehaviour
     {
 
        
-        if(action == "volume" || action == "pan")
+        if(action == "volume" || action == "pan" || action == "select" || action == "mute" || action == "solo")
         {
             var address = "/mas/tracks/" + channel + "/" + action;
 
