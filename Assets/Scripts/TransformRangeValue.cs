@@ -11,8 +11,9 @@ public class TransformRangeValue : MonoBehaviour
     public bool useRefEnd = false;
     public Transform endPositionTransform;
     public Vector3 endPosition;
-    public int channel = 0;
+    public ChannelNumberReceiver channelNumberReceiver;
     public EventOut eventOut;
+    int channel;
     [Range(0, 1)] public float faderValue;
 
     private Vector3 previousPosition;
@@ -22,6 +23,8 @@ public class TransformRangeValue : MonoBehaviour
 
     private void Start ()
     {
+        channel = channelNumberReceiver.ChannelNumber;
+
         if(useRefStart && startPositionTransform == null)
         {
             Debug.LogError("Start position transform is null");

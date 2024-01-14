@@ -51,7 +51,8 @@ public class Listener : MonoBehaviour
 
                 if (channelstring != "master" && succeed)
                 {
-                    value = value / .2f;
+                    value = value / 1.0f;
+                   // value = -1 * (Mathf.Log(value));
                     dispatcher.OnLevelLEvent.Invoke(channel, value);
                 }
             }
@@ -63,7 +64,12 @@ public class Listener : MonoBehaviour
 
                 if (channelstring != "master" && succeed)
                 {
-                    value = value / .2f;
+                    value = value / 1.0f;
+                    //var test = Mathf.Log(value,5);
+                    //value = -1 * (Mathf.Log(value));
+
+
+                    //value = .01f * ( 100 - (100 * (Mathf.Pow(2, (20 * (value - 1))))));
                     dispatcher.OnLevelREvent.Invoke(channel, value);
                 }
             }
@@ -80,22 +86,11 @@ public class Listener : MonoBehaviour
             }
             else if (message.Address.Contains("level-l") && !message.Address.Contains("level-l-real"))
             {
-                float value = 0;
-
-                message.ToFloat(out value);
-
-
-                value = value / .1f;
-                dispatcher.OnLevelLEvent.Invoke(0, value);
+              
             }
             else if (message.Address.Contains("level-r") && !message.Address.Contains("level-r-real"))
             {
-                float value = 0;
-
-                message.ToFloat(out value);
-
-                value = value / .1f;
-                dispatcher.OnLevelREvent.Invoke(0, value);
+                
             }
         }
        

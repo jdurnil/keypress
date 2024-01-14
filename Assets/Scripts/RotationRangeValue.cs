@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +15,9 @@ public class RotationRangeValue : MonoBehaviour
     private float previousRotationValue = float.NaN;
     private Transform localTransform;
     public UnityEvent<float> OnRotationValueChanged;
+    public EventOut eventOut;
+    public int channel;
+    public ChannelNumberReceiver channelNumberReceiver;
 
     private float angle;
 
@@ -21,6 +25,7 @@ public class RotationRangeValue : MonoBehaviour
     {
         localTransform = this.transform;
         rotationValue = GetRotationRangeValue(NormalizeAngle(angle), NormalizeAngle(initialAngle), NormalizeAngle(endingAngle));
+        channel = channelNumberReceiver.ChannelNumber;
     }
 
     void Update ()
@@ -43,6 +48,8 @@ public class RotationRangeValue : MonoBehaviour
         // Check if the rotation has changed since the last frame
         if (!Mathf.Approximately(rotationValue, previousRotationValue))
         {
+            
+            eventOut.OnActivateEvent.Invoke("pan", channel, rotationValue);
             OnRotationValueChanged.Invoke(rotationValue);
             previousRotationValue = rotationValue;
         }

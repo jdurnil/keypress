@@ -14,5 +14,6 @@
         <ui:Slider picking-mode="Ignore" label="Fader Value" value="0" high-value="1" binding-path="faderValue" show-input-field="true" name="faderValue" />
         <uie:PropertyField name="onValueChange" binding-path="OnFaderValueChanged" />
         <uie:ObjectField label="Event Out&#x9;" binding-path="eventOut" />
+        <uie:ObjectField label="Channel Number R" binding-path="channelNumberReceiver" />
     </ui:VisualElement>
 </ui:UXML>

@@ -11,7 +11,7 @@ public class StackedMeter : MonoBehaviour
     public Color redColor = Color.red;
     public ChannelNumberReceiver channelNumberReceiver;
     public int Channel;
-
+    public float maxValue = 50f;
 
     [SerializeField, Range(0f, 1f)]
     private float meterValue = 0f;
@@ -43,9 +43,16 @@ public class StackedMeter : MonoBehaviour
         }
        
     }
+
+    public void ChangeMaxValue (float value)
+    {
+        maxValue = value;
+    }
+
     public void SetValue (float value)
     {
-        meterValue = Mathf.Clamp01(value);
+        meterValue = Mathf.Clamp(value, 0, maxValue);
+        meterValue = meterValue / maxValue;
         UpdateMeter();
     }
 
@@ -57,10 +64,15 @@ public class StackedMeter : MonoBehaviour
             if (i < barsAmount)
             {
                 bars[i].material.color = GetColorForBar(i);
+                bars[i].material.EnableKeyword("_EMISSION");
+                bars[i].material.SetColor("_EmissionColor", GetColorForBar(i));
+
             }
             else
             {
                 bars[i].material.color = originalColor;
+                //bars[i].material.SetColor("_EmissionColor", originalColor);
+                bars[i].material.DisableKeyword("_EMISSION");
             }
         }
     }
