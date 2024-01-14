@@ -1,0 +1,236 @@
+fileFormatVersion: 2
+guid: f2c538782cd363d479723be5fc87897b
+timeCreated: 1516399415
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Record_Studio_Corner_Wave
+    100002: Record_Studio_Floor_Threshold
+    100004: Record_Studio_Ground
+    100006: Record_Studio_Wall_Wave
+    100008: //RootNode
+    100010: Box001
+    100012: Record_Studio_Wall_Wave001
+    100014: Record_Studio_Wall_CustomWindow
+    100016: Record_Studio_Wall_Window
+    100018: Record_Studio_Wall_CustomWindow_Wave
+    100020: Record_Studio_Wall_Door_Wave
+    100022: Record_Studio_Wall_Window_OneSide_Wave
+    100024: Record_Studio_Wall_Window_Wave
+    100026: Door
+    100028: Door_frame
+    100030: Door_handle
+    100032: Record_Studio_CeilingComposition
+    100034: Record_Studio_Corner
+    100036: Record_Studio_Ground_2
+    100038: Record_Studio_Wall
+    100040: Record_Studio_Wall_Door
+    100042: Record_Studio_Wall_Window_OneSide
+    100044: Record_Studio_Window_Frame
+    100046: Record_Studio_Window_Glass
+    100048: Door_frame_low
+    100050: Door_handle_low
+    100052: Door_low
+    100054: Record_Studio_Corner_low
+    100056: Record_Studio_Floor_Threshold_low
+    100058: Record_Studio_Window_Frame_low
+    100060: Record_Studio_Ground_FullUVW
+    400000: Record_Studio_Corner_Wave
+    400002: Record_Studio_Floor_Threshold
+    400004: Record_Studio_Ground
+    400006: Record_Studio_Wall_Wave
+    400008: //RootNode
+    400010: Box001
+    400012: Record_Studio_Wall_Wave001
+    400014: Record_Studio_Wall_CustomWindow
+    400016: Record_Studio_Wall_Window
+    400018: Record_Studio_Wall_CustomWindow_Wave
+    400020: Record_Studio_Wall_Door_Wave
+    400022: Record_Studio_Wall_Window_OneSide_Wave
+    400024: Record_Studio_Wall_Window_Wave
+    400026: Door
+    400028: Door_frame
+    400030: Door_handle
+    400032: Record_Studio_CeilingComposition
+    400034: Record_Studio_Corner
+    400036: Record_Studio_Ground_2
+    400038: Record_Studio_Wall
+    400040: Record_Studio_Wall_Door
+    400042: Record_Studio_Wall_Window_OneSide
+    400044: Record_Studio_Window_Frame
+    400046: Record_Studio_Window_Glass
+    400048: Door_frame_low
+    400050: Door_handle_low
+    400052: Door_low
+    400054: Record_Studio_Corner_low
+    400056: Record_Studio_Floor_Threshold_low
+    400058: Record_Studio_Window_Frame_low
+    400060: Record_Studio_Ground_FullUVW
+    2300000: Record_Studio_Corner_Wave
+    2300002: Record_Studio_Floor_Threshold
+    2300004: Record_Studio_Ground
+    2300006: Record_Studio_Wall_Wave
+    2300008: Box001
+    2300010: Record_Studio_Wall_Wave001
+    2300012: Record_Studio_Wall_CustomWindow
+    2300014: Record_Studio_Wall_Window
+    2300016: Record_Studio_Wall_CustomWindow_Wave
+    2300018: Record_Studio_Wall_Door_Wave
+    2300020: Record_Studio_Wall_Window_OneSide_Wave
+    2300022: Record_Studio_Wall_Window_Wave
+    2300024: Door
+    2300026: Door_frame
+    2300028: Door_handle
+    2300030: Record_Studio_CeilingComposition
+    2300032: Record_Studio_Corner
+    2300034: Record_Studio_Ground_2
+    2300036: Record_Studio_Wall
+    2300038: Record_Studio_Wall_Door
+    2300040: Record_Studio_Wall_Window_OneSide
+    2300042: Record_Studio_Window_Frame
+    2300044: Record_Studio_Window_Glass
+    2300046: Door_frame_low
+    2300048: Door_handle_low
+    2300050: Door_low
+    2300052: Record_Studio_Corner_low
+    2300054: Record_Studio_Floor_Threshold_low
+    2300056: Record_Studio_Window_Frame_low
+    2300058: Record_Studio_Ground_FullUVW
+    3300000: Record_Studio_Corner_Wave
+    3300002: Record_Studio_Floor_Threshold
+    3300004: Record_Studio_Ground
+    3300006: Record_Studio_Wall_Wave
+    3300008: Box001
+    3300010: Record_Studio_Wall_Wave001
+    3300012: Record_Studio_Wall_CustomWindow
+    3300014: Record_Studio_Wall_Window
+    3300016: Record_Studio_Wall_CustomWindow_Wave
+    3300018: Record_Studio_Wall_Door_Wave
+    3300020: Record_Studio_Wall_Window_OneSide_Wave
+    3300022: Record_Studio_Wall_Window_Wave
+    3300024: Door
+    3300026: Door_frame
+    3300028: Door_handle
+    3300030: Record_Studio_CeilingComposition
+    3300032: Record_Studio_Corner
+    3300034: Record_Studio_Ground_2
+    3300036: Record_Studio_Wall
+    3300038: Record_Studio_Wall_Door
+    3300040: Record_Studio_Wall_Window_OneSide
+    3300042: Record_Studio_Window_Frame
+    3300044: Record_Studio_Window_Glass
+    3300046: Door_frame_low
+    3300048: Door_handle_low
+    3300050: Door_low
+    3300052: Record_Studio_Corner_low
+    3300054: Record_Studio_Floor_Threshold_low
+    3300056: Record_Studio_Window_Frame_low
+    3300058: Record_Studio_Ground_FullUVW
+    4300000: Record_Studio_Ground
+    4300002: Record_Studio_Wall_Wave
+    4300004: Record_Studio_Corner_Wave
+    4300006: Record_Studio_Floor_Threshold
+    4300008: Record_Studio_Wall_Wave001
+    4300010: Box001
+    4300012: Record_Studio_Wall_Window
+    4300014: Record_Studio_Wall_CustomWindow
+    4300016: Record_Studio_Wall_Window_Wave
+    4300018: Record_Studio_Wall_CustomWindow_Wave
+    4300020: Record_Studio_Wall_Window_OneSide_Wave
+    4300022: Record_Studio_Wall_Door_Wave
+    4300024: Record_Studio_Window_Frame
+    4300026: Record_Studio_Window_Glass
+    4300028: Record_Studio_Wall
+    4300030: Record_Studio_Wall_Window_OneSide
+    4300032: Record_Studio_Wall_Door
+    4300034: Record_Studio_Ground_2
+    4300036: Record_Studio_CeilingComposition
+    4300038: Record_Studio_Corner
+    4300040: Door
+    4300042: Door_frame
+    4300044: Door_handle
+    4300046: Record_Studio_Floor_Threshold_low
+    4300048: Record_Studio_Window_Frame_low
+    4300050: Record_Studio_Corner_low
+    4300052: Door_low
+    4300054: Door_frame_low
+    4300056: Door_handle_low
+    4300058: Record_Studio_Ground_FullUVW
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

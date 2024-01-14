@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Channel : MonoBehaviour
 {
+    [SerializeField]
     public int ChannelNumber;
     // Start is called before the first frame update
     void Start()

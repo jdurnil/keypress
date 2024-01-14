@@ -32,12 +32,16 @@ public class EventOut : MonoBehaviour
     {
 
        
-        var address = "/mas/tracks/" + channel + "/" + action;
-        
-        var message = new OSCMessage(address);
-        message.AddValue(OSCValue.Float(value));
+        if(action == "volume" || action == "pan")
+        {
+            var address = "/mas/tracks/" + channel + "/" + action;
 
-        Transmitter.Send(message);
+            var message = new OSCMessage(address);
+            message.AddValue(OSCValue.Float(value));
+
+            Transmitter.Send(message);
+        }
+       
 
 
     }

@@ -15,18 +15,18 @@ public class TrackingHead : MonoBehaviour
     {
 
         head = TrackingAnchor.transform.GetChild(3).gameObject;
-        initRotationX = head.transform.eulerAngles.x;
+       
         initRotationY = head.transform.eulerAngles.y;
-        initRotationZ = head.transform.eulerAngles.z;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //var rotation = head.transform.eulerAngles;
-        //var newRotation = rotation.y;
-        //var change = newRotation - initRotationY;
-      
+        var rotation = head.transform.eulerAngles;
+        var newRotation = rotation.y;
+        var change = newRotation - initRotationY;
+
 
     }
 }
