@@ -3342,6 +3342,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pokeInteractable: {fileID: 921433099}
   _buttonBaseTransform: {fileID: 1494287897}
+--- !u!114 &292090073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5374002114601329963, guid: c035d71504d82d44c8da66c08916f056, type: 3}
+  m_PrefabInstance: {fileID: 5223510353572196849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2931682ed0c7104bbf5385612419ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &302947117
 GameObject:
   m_ObjectHideFlags: 0
@@ -4686,6 +4697,105 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1777518540}
         m_TargetAssemblyTypeName: StackedMeter, Assembly-CSharp
+        m_MethodName: ReceiveDispatch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLabelEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5223510353572196864}
+        m_TargetAssemblyTypeName: LabelUpdate, Assembly-CSharp
+        m_MethodName: ReceiveDispatch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 812064489}
+        m_TargetAssemblyTypeName: LabelUpdate, Assembly-CSharp
+        m_MethodName: ReceiveDispatch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5223510353572196862}
+        m_TargetAssemblyTypeName: LabelUpdate, Assembly-CSharp
+        m_MethodName: ReceiveDispatch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 292090073}
+        m_TargetAssemblyTypeName: LabelUpdate, Assembly-CSharp
+        m_MethodName: ReceiveDispatch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5223510353572196860}
+        m_TargetAssemblyTypeName: LabelUpdate, Assembly-CSharp
+        m_MethodName: ReceiveDispatch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 846211116}
+        m_TargetAssemblyTypeName: LabelUpdate, Assembly-CSharp
+        m_MethodName: ReceiveDispatch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1975041541}
+        m_TargetAssemblyTypeName: LabelUpdate, Assembly-CSharp
+        m_MethodName: ReceiveDispatch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1090267727}
+        m_TargetAssemblyTypeName: LabelUpdate, Assembly-CSharp
         m_MethodName: ReceiveDispatch
         m_Mode: 0
         m_Arguments:
@@ -8771,6 +8881,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801365317}
   m_CullTransparentMesh: 1
+--- !u!114 &812064489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3811672360898724964, guid: c035d71504d82d44c8da66c08916f056, type: 3}
+  m_PrefabInstance: {fileID: 5223510353572196849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2931682ed0c7104bbf5385612419ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &846211116 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5588143781008566770, guid: c035d71504d82d44c8da66c08916f056, type: 3}
+  m_PrefabInstance: {fileID: 5223510353572196849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2931682ed0c7104bbf5385612419ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &853370248
 GameObject:
   m_ObjectHideFlags: 0
@@ -11243,6 +11375,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2865104911859505335, guid: 6ee2383d03f73b7489b7177e7a581c1f, type: 3}
+--- !u!114 &1090267727 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3173357514671742764, guid: c035d71504d82d44c8da66c08916f056, type: 3}
+  m_PrefabInstance: {fileID: 5223510353572196849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2931682ed0c7104bbf5385612419ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1097860265
 GameObject:
   m_ObjectHideFlags: 0
@@ -20208,6 +20351,17 @@ Transform:
   - {fileID: 1902025974}
   m_Father: {fileID: 1538510060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1975041541 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4627444146253137762, guid: c035d71504d82d44c8da66c08916f056, type: 3}
+  m_PrefabInstance: {fileID: 5223510353572196849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2931682ed0c7104bbf5385612419ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1975078635
 GameObject:
   m_ObjectHideFlags: 0
@@ -24691,6 +24845,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e282e4c4a93f5b5479bcfff0d07ba9e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5223510353572196860 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8290526514896966983, guid: c035d71504d82d44c8da66c08916f056, type: 3}
+  m_PrefabInstance: {fileID: 5223510353572196849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2931682ed0c7104bbf5385612419ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5223510353572196862 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5259026413065094647, guid: c035d71504d82d44c8da66c08916f056, type: 3}
+  m_PrefabInstance: {fileID: 5223510353572196849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2931682ed0c7104bbf5385612419ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5223510353572196864 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7652041205705173001, guid: c035d71504d82d44c8da66c08916f056, type: 3}
+  m_PrefabInstance: {fileID: 5223510353572196849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2931682ed0c7104bbf5385612419ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!33 &5243892613911821733
