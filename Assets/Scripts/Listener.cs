@@ -72,7 +72,8 @@ public class Listener : MonoBehaviour
                     //value = .01f * ( 100 - (100 * (Mathf.Pow(2, (20 * (value - 1))))));
                     dispatcher.OnLevelREvent.Invoke(channel, value);
                 }
-            } else if (message.Address.Contains("label"))
+            } 
+            else if (message.Address.Contains("label"))
             {
                 string value = "";
 
