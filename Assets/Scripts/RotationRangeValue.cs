@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +15,9 @@ public class RotationRangeValue : MonoBehaviour
     private float previousRotationValue = float.NaN;
     private Transform localTransform;
     public UnityEvent<float> OnRotationValueChanged;
+    public EventOut eventOut;
+    public int channel;
+    public ChannelNumberReceiver channelNumberReceiver;
 
     private float angle;
 
@@ -21,6 +25,7 @@ public class RotationRangeValue : MonoBehaviour
     {
         localTransform = this.transform;
         rotationValue = GetRotationRangeValue(NormalizeAngle(angle), NormalizeAngle(initialAngle), NormalizeAngle(endingAngle));
+        channel = channelNumberReceiver.ChannelNumber;
     }
 
     void Update ()
@@ -41,11 +46,14 @@ public class RotationRangeValue : MonoBehaviour
         rotationValue = GetRotationRangeValue(NormalizeAngle(angle), NormalizeAngle(initialAngle), NormalizeAngle(endingAngle));
 
         // Check if the rotation has changed since the last frame
-        if (!Mathf.Approximately(rotationValue, previousRotationValue))
+        if (previousRotationValue != float.NaN && !Mathf.Approximately(rotationValue, previousRotationValue))
         {
+            
+            eventOut.OnActivateEvent.Invoke("pan", channel, rotationValue);
             OnRotationValueChanged.Invoke(rotationValue);
-            previousRotationValue = rotationValue;
+           
         }
+        previousRotationValue = rotationValue; 
     }
 
     float GetRotationRangeValue(float currentAngle, float normalizedStart, float normalizedEnd)
@@ -73,6 +81,38 @@ public class RotationRangeValue : MonoBehaviour
         // Normalize angle to be within 0 - 360 when negative
         angle = (angle + 360f) % 360f;
         return angle;
+    }
+
+    float DeNormalizeValue(float value)
+    {
+        
+       
+        var normalizedStart = NormalizeAngle(initialAngle);
+        var normalizedEnd = NormalizeAngle(endingAngle);
+        var range = normalizedEnd - normalizedStart;
+        var angle = (value * range) + normalizedStart;
+
+        
+
+        return angle;
+
+    }
+
+    public void ReceiveDispatch(int Channel, float value)
+    {
+        if (channel == Channel)
+        {
+            
+            var angle = DeNormalizeValue(value);
+            SetRotationOnObject(angle);
+        }
+
+    }
+
+    void SetRotationOnObject(float angle)
+    {
+
+        gameObject.transform.localEulerAngles = new Vector3(angle, 0, 0);
     }
 
     public void ShowAngleValue (float value)

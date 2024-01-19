@@ -11,6 +11,9 @@ public class TransformRangeValue : MonoBehaviour
     public bool useRefEnd = false;
     public Transform endPositionTransform;
     public Vector3 endPosition;
+    public ChannelNumberReceiver channelNumberReceiver;
+    public EventOut eventOut;
+    int channel;
     [Range(0, 1)] public float faderValue;
 
     private Vector3 previousPosition;
@@ -20,6 +23,8 @@ public class TransformRangeValue : MonoBehaviour
 
     private void Start ()
     {
+        channel = channelNumberReceiver.ChannelNumber;
+
         if(useRefStart && startPositionTransform == null)
         {
             Debug.LogError("Start position transform is null");
@@ -42,6 +47,7 @@ public class TransformRangeValue : MonoBehaviour
         // faderValue = GetRangeValue(startPosition, endPosition, transform.position);
         transform.position = Vector3.Lerp(startPos, endPos, faderValue);
         previousPosition = transform.position;
+        Debug.Log("channel: " + channel);
     }
 
     private void Update ()
@@ -53,6 +59,7 @@ public class TransformRangeValue : MonoBehaviour
         if(transform.position != previousPosition)
         {
             faderValue = GetRangeValue(startPos, endPos, transform.position);
+            eventOut.OnActivateEvent.Invoke("volume", channel, faderValue);
             OnFaderValueChanged.Invoke(faderValue);
             previousPosition = transform.position;
         }
@@ -65,6 +72,25 @@ public class TransformRangeValue : MonoBehaviour
 
         // Project startToCurrent onto startToEnd to find the normalized position
         return Mathf.Clamp01(Vector3.Dot(startToCurrent, startToEnd) / startToEnd.sqrMagnitude);
+    }
+
+    public void ReceiveDispatch(int Channel, float value)
+    {
+        if(Channel == channel)
+        {
+            SetFaderValue(value);
+        }
+        
+    }
+
+    public void SetFaderValue (float value)
+    {
+        var startPos = useRefStart ? startPositionTransform.position : startPosition;
+        var endPos = useRefEnd ? endPositionTransform.position : endPosition;
+
+        faderValue = value;
+        transform.position = Vector3.Lerp(startPos, endPos, faderValue);
+        previousPosition = transform.position;
     }
 
     public void ShowFaderValue (float value)

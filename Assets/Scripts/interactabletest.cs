@@ -23,7 +23,7 @@ public class test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(interactableViewInterface.State);
+        //Debug.Log(interactableViewInterface.State);
         
         // Use the commented line instead after the equal to use the hover instead of selected
         if(interactableViewInterface.State == InteractableState.Select) //InteractableState.Hover) 
