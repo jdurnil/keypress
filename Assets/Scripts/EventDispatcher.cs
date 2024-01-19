@@ -13,6 +13,10 @@ public class EventDispatcher : MonoBehaviour
     public UnityEvent<int, float> OnLevelLEvent;
     public UnityEvent<int, float> OnLevelREvent;
     public UnityEvent<int, string> OnLabelEvent;
+    public UnityEvent<int, float> OnPanEvent;
+    public UnityEvent<int, float> OnMuteEvent;
+    public UnityEvent<int, float> OnSoloEvent;
+    public UnityEvent<int, float> OnSelectEvent;
     // Start is called before the first frame update
     void Start()
     {  
