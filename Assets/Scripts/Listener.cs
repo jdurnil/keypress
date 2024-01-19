@@ -51,11 +51,14 @@ public class Listener : MonoBehaviour
 
                 if (channelstring != "master" && succeed)
                 {
-                    value = value / 1.0f;
+                    //value = vvalue / 1.0f;
+                    var decibelVal = Mathf.Log10(value) * 20f;
+                    var normalizedVal = JMAP(decibelVal, -80f, 0f, 0f, 1f);
                    // value = -1 * (Mathf.Log(value));
-                    dispatcher.OnLevelLEvent.Invoke(channel, value);
+                    dispatcher.OnLevelLEvent.Invoke(channel, normalizedVal);
                 }
             }
+          
             else if (message.Address.Contains("level-r-real"))
             {
                 float value = 0;
@@ -64,20 +67,62 @@ public class Listener : MonoBehaviour
 
                 if (channelstring != "master" && succeed)
                 {
-                    value = value / 1.0f;
-                    //var test = Mathf.Log(value,5);
-                    //value = -1 * (Mathf.Log(value));
-
-
-                    //value = .01f * ( 100 - (100 * (Mathf.Pow(2, (20 * (value - 1))))));
-                    dispatcher.OnLevelREvent.Invoke(channel, value);
+                    var decibelVal = Mathf.Log10(value) * 20f;
+                    var normalizedVal = JMAP(decibelVal, -80f, 0f, 0f, 1f);
+                    Debug.Log("level-r-real: " + normalizedVal);
+                    dispatcher.OnLevelREvent.Invoke(channel, normalizedVal);
                 }
-            } else if (message.Address.Contains("label"))
+            } 
+            else if (message.Address.Contains("name"))
             {
                 string value = "";
 
                 message.ToString(out value);
                 dispatcher.OnLabelEvent.Invoke(channel, value);
+            }
+            else if (message.Address.Contains("pan"))
+            {
+                float value;
+
+                message.ToFloat(out value);
+
+                if (channelstring != "master" && succeed)
+                {
+                    dispatcher.OnPanEvent.Invoke(channel, value);
+                }
+            }
+            else if (message.Address.Contains("mute"))
+            {
+                float value;
+
+                message.ToFloat(out value);
+
+                if (channelstring != "master" && succeed)
+                {
+                    dispatcher.OnMuteEvent.Invoke(channel, value);
+                }
+            }
+            else if (message.Address.Contains("solo"))
+            {
+                float value;
+
+                message.ToFloat(out value);
+
+                if (channelstring != "master" && succeed)
+                {
+                    dispatcher.OnSoloEvent.Invoke(channel, value);
+                }
+            }
+            else if (message.Address.Contains("select"))
+            {
+                float value;
+
+                message.ToFloat(out value);
+
+                if (channelstring != "master" && succeed)
+                {
+                    dispatcher.OnSelectEvent.Invoke(channel, value);
+                }
             }
         }
         else
@@ -102,6 +147,11 @@ public class Listener : MonoBehaviour
        
 
         
+    }
+
+    float JMAP(float x, float in_min, float in_max, float out_min, float out_max)
+    {
+        return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
     }
 
     // Update is called once per frame

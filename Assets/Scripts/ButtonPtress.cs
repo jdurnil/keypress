@@ -53,5 +53,22 @@ public class ButtonPtress : MonoBehaviour
          
 
         //testanim.SetBool("Pressed", isPressed);
+       
+    }
+    public void ReceiveDispatch(int ChannelNumber, float value)
+    {
+        if (channelNumber == ChannelNumber )
+        {
+            if (value == 1)
+            {
+                gameObject.GetComponent<Renderer>().material.color = Color.red;
+                isPressed = true;
+            }
+            else
+            {
+                gameObject.GetComponent<Renderer>().material.color = Color.white;
+                isPressed = false;
+            }
+        }
     }
 }
