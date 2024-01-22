@@ -14,7 +14,7 @@ public class EnablePathing : MonoBehaviour
         //when W is clicked on the keyboard
         if(Input.GetKeyDown(KeyCode.W)){
             //this method starts the camera pathing
-            Cornea.Lerp.CameraLerpPath();
+            Cornea.Lerp.CameraLerpNext();
         }
     }
 }
