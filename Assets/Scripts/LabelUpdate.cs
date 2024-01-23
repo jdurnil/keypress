@@ -28,6 +28,14 @@ public class LabelUpdate : MonoBehaviour
         {
             //
             //GetComponent<TextMesh>().text = value;
+            
+            
+            if (value.Length > 8)
+            {
+                value = value.Substring(0, 8);
+                value = value + ".";
+            }
+
             myTextVariable.text = value;
         }
     }
