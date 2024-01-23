@@ -102,17 +102,14 @@ public class RotationRangeValue : MonoBehaviour
     {
         if (channel == Channel)
         {
-            
-            var angle = DeNormalizeValue(value);
-            SetRotationOnObject(angle);
+            SetRotationOnObject(value);
         }
 
     }
 
     void SetRotationOnObject(float angle)
     {
-
-        gameObject.transform.localEulerAngles = new Vector3(angle, 0, 0);
+        gameObject.transform.localEulerAngles = new Vector3(Mathf.Lerp(initialAngle, endingAngle, angle), gameObject.transform.localEulerAngles.y, gameObject.transform.localEulerAngles.z);
     }
 
     public void ShowAngleValue (float value)
