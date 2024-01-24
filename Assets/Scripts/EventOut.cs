@@ -40,6 +40,9 @@ public class EventOut : MonoBehaviour
             message.AddValue(OSCValue.Float(value));
 
             Transmitter.Send(message);
+        } else if(action == "EQ")
+        {
+
         }
        
 
