@@ -59,7 +59,7 @@ public class RotationRangeValue : MonoBehaviour
     float GetRotationRangeValue(float currentAngle, float normalizedStart, float normalizedEnd)
     {
         // Map the current angle from -180 to 180 to 0 to 360
-        currentAngle = currentAngle > 180f ? currentAngle - 360f : currentAngle;
+        // currentAngle = currentAngle > 180f ? currentAngle - 360f : currentAngle;
         
         // Calculate the range
         float range = normalizedEnd - normalizedStart;
