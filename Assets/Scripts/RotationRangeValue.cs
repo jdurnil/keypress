@@ -59,7 +59,7 @@ public class RotationRangeValue : MonoBehaviour
     float GetRotationRangeValue(float currentAngle, float normalizedStart, float normalizedEnd)
     {
         // Map the current angle from -180 to 180 to 0 to 360
-        currentAngle = currentAngle > 180f ? currentAngle - 360f : currentAngle;
+        // currentAngle = currentAngle > 180f ? currentAngle - 360f : currentAngle;
         
         // Calculate the range
         float range = normalizedEnd - normalizedStart;
@@ -102,17 +102,14 @@ public class RotationRangeValue : MonoBehaviour
     {
         if (channel == Channel)
         {
-            
-            var angle = DeNormalizeValue(value);
-            SetRotationOnObject(angle);
+            SetRotationOnObject(value);
         }
 
     }
 
     void SetRotationOnObject(float angle)
     {
-
-        gameObject.transform.localEulerAngles = new Vector3(angle, 0, 0);
+        gameObject.transform.localEulerAngles = new Vector3(Mathf.Lerp(initialAngle, endingAngle, angle), gameObject.transform.localEulerAngles.y, gameObject.transform.localEulerAngles.z);
     }
 
     public void ShowAngleValue (float value)
