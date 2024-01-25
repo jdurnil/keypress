@@ -124,6 +124,17 @@ public class Listener : MonoBehaviour
                     dispatcher.OnSelectEvent.Invoke(channel, value);
                 }
             }
+            else if (message.Address.Contains("pan"))
+            {
+                float value;
+
+                message.ToFloat(out value);
+
+                if (channelstring != "master" && succeed)
+                {
+                    dispatcher.OnPanEvent.Invoke(channel, value);
+                }
+            }
         }
         else
         {
