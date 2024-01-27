@@ -1,6 +1,9 @@
+using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
+using Unity.VisualScripting;
+
+//using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,12 +14,15 @@ public class RotationRangeValue : MonoBehaviour
     public Axis axis;
     public float initialAngle;
     public float endingAngle;
+    public OneGrabRotateTransformer2 constraints;
     [Range(0, 1)] public float rotationValue;
     private float previousRotationValue = float.NaN;
     private Transform localTransform;
     public UnityEvent<float> OnRotationValueChanged;
     public EventOut eventOut;
     public int channel;
+    public bool initialSet = false;
+    public bool grabbed = false;    
     public ChannelNumberReceiver channelNumberReceiver;
 
     private float angle;
@@ -107,9 +113,23 @@ public class RotationRangeValue : MonoBehaviour
 
     }
 
+    public void OnGrabbedEventbb(bool grabbed)
+    {
+        this.grabbed = grabbed;
+    }
+    
+
     void SetRotationOnObject(float angle)
     {
-        gameObject.transform.localEulerAngles = new Vector3(Mathf.Lerp(initialAngle, endingAngle, angle), gameObject.transform.localEulerAngles.y, gameObject.transform.localEulerAngles.z);
+        gameObject.transform.localEulerAngles = new Vector3(gameObject.transform.localEulerAngles.x, gameObject.transform.localEulerAngles.y, Mathf.Lerp(initialAngle, endingAngle, angle));
+        if (gameObject.transform.localEulerAngles.z != 0 && !grabbed)
+        {
+            constraints.Constraints.MinAngle.Value = 0 - gameObject.transform.localEulerAngles.z;
+            constraints.Constraints.MaxAngle.Value = 270 - gameObject.transform.localEulerAngles.z;
+            
+            initialSet = true;
+        }
+        
     }
 
     public void ShowAngleValue (float value)

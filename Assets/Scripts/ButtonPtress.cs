@@ -1,7 +1,7 @@
 using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
+//using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class ButtonPtress : MonoBehaviour
@@ -20,6 +20,7 @@ public class ButtonPtress : MonoBehaviour
     public int channelNumber;
     [SerializeField]
     private Color _selectedColor = Color.red;
+    public bool isSelected = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,25 +32,32 @@ public class ButtonPtress : MonoBehaviour
     void Update()
     {
         // Use the commented line instead after the equal to use the hover instead of selected
-        if (interactableViewInterface.State == InteractableState.Select) //InteractableState.Hover) 
+        if (interactableViewInterface.State == InteractableState.Select && !isSelected) //InteractableState.Hover) 
         {
             if (!isPressed)
             {
                 
                 gameObject.GetComponent<Renderer>().material.color = _selectedColor;
                 eventOut.OnActivateEvent.Invoke(buttonName, channelNumber, 1);
+                audioSource.PlayOneShot(sound);
                 isPressed = true;
             }
             else
             {
                 gameObject.GetComponent<Renderer>().material.color = Color.white;
                 eventOut.OnActivateEvent.Invoke(buttonName, channelNumber, 0);
+                audioSource.PlayOneShot(sound);
+                isPressed = false;
             }
-
-            audioSource.PlayOneShot(sound);
+            isSelected = true;
+            
 
             //gameObject.GetComponent<Renderer>().material.color = _selectedColor;
-        } // if you use the Hover I suggest uncomment this line, if you are happy with Select state leave this line commented
+        } else if(interactableViewInterface.State == InteractableState.Normal)
+        {
+               isSelected = false;
+        }
+            // if you use the Hover I suggest uncomment this line, if you are happy with Select state leave this line commented
          
 
         //testanim.SetBool("Pressed", isPressed);
