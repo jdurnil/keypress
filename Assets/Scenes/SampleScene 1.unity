@@ -151,10 +151,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fcceba9a21924c4b95a27f5bc901349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactableView: {fileID: 0}
+  interactableView: {fileID: 911755246}
   audioSource: {fileID: 4575162046334195791}
   sound: {fileID: 8300000, guid: af1bab22aa558694597819d045302661, type: 3}
-  buttonName: EQ
+  buttonName: send
   eventOut: {fileID: 66063637}
   channelNumberReceiver: {fileID: 15395124}
   channelNumber: 0
@@ -10491,6 +10491,17 @@ Transform:
   - {fileID: 376359560}
   m_Father: {fileID: 1297180147}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &911755246 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2730868009428021756, guid: c035d71504d82d44c8da66c08916f056, type: 3}
+  m_PrefabInstance: {fileID: 5223510353572196849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 317e663e2bb60ea408fe22b908b59295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &921433097
 GameObject:
   m_ObjectHideFlags: 0
@@ -40735,7 +40746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4805181650042880687, guid: c035d71504d82d44c8da66c08916f056, type: 3}
       propertyPath: rotationValue
-      value: 0.492
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4807191796778111723, guid: c035d71504d82d44c8da66c08916f056, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51767,19 +51778,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8344166338971807382, guid: c035d71504d82d44c8da66c08916f056, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.097004555
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8344166338971807382, guid: c035d71504d82d44c8da66c08916f056, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7004214
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8344166338971807382, guid: c035d71504d82d44c8da66c08916f056, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.097004555
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8344166338971807382, guid: c035d71504d82d44c8da66c08916f056, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7004214
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8344166338971807382, guid: c035d71504d82d44c8da66c08916f056, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -51791,7 +51802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8344166338971807382, guid: c035d71504d82d44c8da66c08916f056, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 195.77
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8383230157661383156, guid: c035d71504d82d44c8da66c08916f056, type: 3}
       propertyPath: m_LocalRotation.w
