@@ -119,7 +119,8 @@ namespace Oculus.Interaction
             var grabPoint = _grabbable.GrabPoints[0];
             var targetTransform = _grabbable.Transform;
 
-            OnGrab.Invoke(true);
+            bool grabbed = true;
+            OnGrab.Invoke(grabbed);
             if (_pivotTransform == null)
             {
                 _localRotation = targetTransform.localRotation;
