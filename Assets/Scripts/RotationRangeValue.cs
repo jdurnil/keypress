@@ -52,7 +52,7 @@ public class RotationRangeValue : MonoBehaviour
         rotationValue = GetRotationRangeValue(NormalizeAngle(angle), NormalizeAngle(initialAngle), NormalizeAngle(endingAngle));
 
         // Check if the rotation has changed since the last frame
-        if (previousRotationValue != float.NaN && !Mathf.Approximately(rotationValue, previousRotationValue))
+        if(!float.IsNaN(previousRotationValue) && !Mathf.Approximately(rotationValue, previousRotationValue))
         {
             
             eventOut.OnActivateEvent.Invoke("pan", channel, rotationValue);
@@ -121,8 +121,9 @@ public class RotationRangeValue : MonoBehaviour
 
     void SetRotationOnObject(float angle)
     {
+        var test = this.grabbed;
         gameObject.transform.localEulerAngles = new Vector3(gameObject.transform.localEulerAngles.x, gameObject.transform.localEulerAngles.y, Mathf.Lerp(initialAngle, endingAngle, angle));
-        if (gameObject.transform.localEulerAngles.z != 0 && !grabbed)
+        if (gameObject.transform.localEulerAngles.z != 0 && !this.grabbed)
         {
             constraints.Constraints.MinAngle.Value = 0 - gameObject.transform.localEulerAngles.z;
             constraints.Constraints.MaxAngle.Value = 270 - gameObject.transform.localEulerAngles.z;
