@@ -73,7 +73,7 @@ public class Listener : MonoBehaviour
                     dispatcher.OnLevelREvent.Invoke(channel, normalizedVal);
                 }
             } 
-            else if (message.Address.Contains("name"))
+            else if (message.Address.Contains("name") && !message.Address.Contains("current_name"))
             {
                 string value = "";
 
