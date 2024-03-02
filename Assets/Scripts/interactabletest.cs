@@ -13,11 +13,14 @@ public class test : MonoBehaviour
     public Animator testanim;
     public AudioSource audioSource;
     public AudioClip sound;
+    [SerializeField]
+    GameObject board;
     private bool isPressed = false;
     // Start is called before the first frame update
     void Start()
     {
         interactableViewInterface = interactableView as IInteractableView; 
+        board.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,7 +32,9 @@ public class test : MonoBehaviour
         if(interactableViewInterface.State == InteractableState.Select) //InteractableState.Hover) 
         {
             if(!isPressed)
-                audioSource.PlayOneShot(sound);
+
+                board.SetActive(!board.activeSelf);
+                //audioSource.PlayOneShot(sound);
 
             isPressed = true;
         } // if you use the Hover I suggest uncomment this line, if you are happy with Select state leave this line commented
@@ -38,6 +43,6 @@ public class test : MonoBehaviour
             isPressed = false;
         }
         
-        testanim.SetBool("Pressed", isPressed);
+        //testanim.SetBool("Pressed", isPressed);
     }
 }
