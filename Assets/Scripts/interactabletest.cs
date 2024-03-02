@@ -19,8 +19,8 @@ public class test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        interactableViewInterface = interactableView as IInteractableView; 
-        board.SetActive(false);
+        //interactableViewInterface = interactableView as IInteractableView; 
+        //board.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,19 +29,19 @@ public class test : MonoBehaviour
         //Debug.Log(interactableViewInterface.State);
         
         // Use the commented line instead after the equal to use the hover instead of selected
-        if(interactableViewInterface.State == InteractableState.Select) //InteractableState.Hover) 
-        {
-            if(!isPressed)
+        //if(interactableViewInterface.State == InteractableState.Select) //InteractableState.Hover) 
+        //{
+        //    if(!isPressed)
 
-                board.SetActive(!board.activeSelf);
-                //audioSource.PlayOneShot(sound);
+        //        board.SetActive(!board.activeSelf);
+        //        //audioSource.PlayOneShot(sound);
 
-            isPressed = true;
-        } // if you use the Hover I suggest uncomment this line, if you are happy with Select state leave this line commented
-        else //if(interactableViewInterface.State == InteractableState.Normal) 
-        {
-            isPressed = false;
-        }
+        //    isPressed = true;
+        //} // if you use the Hover I suggest uncomment this line, if you are happy with Select state leave this line commented
+        //else //if(interactableViewInterface.State == InteractableState.Normal) 
+        //{
+        //    isPressed = false;
+        //}
         
         //testanim.SetBool("Pressed", isPressed);
     }
