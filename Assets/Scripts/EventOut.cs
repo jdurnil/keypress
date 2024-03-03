@@ -43,6 +43,14 @@ public class EventOut : MonoBehaviour
         } else if(action == "EQ")
         {
 
+        } else if(action == "play" || action == "stop" || action == "record")
+        {
+            var address = "/mas/transport/" + action;
+
+            var message = new OSCMessage(address);
+            message.AddValue(OSCValue.Float(value));
+
+            Transmitter.Send(message);
         }
        
 
