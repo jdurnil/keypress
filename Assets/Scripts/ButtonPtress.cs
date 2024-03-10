@@ -40,17 +40,19 @@ public class ButtonPtress : MonoBehaviour
                 //gameObject.GetComponent<Renderer>().material.color = _selectedColor;
                 gameObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
                 gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", _selectedColor);
-                eventOut.OnActivateEvent.Invoke(buttonName, channelNumber, 1);
+                
                 audioSource.PlayOneShot(sound);
                 isPressed = true;
+                eventOut.OnActivateEvent.Invoke(buttonName, channelNumber, 1);
             }
             else
             {
                 //gameObject.GetComponent<Renderer>().material.color = Color.white;
                 gameObject.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
-                eventOut.OnActivateEvent.Invoke(buttonName, channelNumber, 0);
+                
                 audioSource.PlayOneShot(sound);
                 isPressed = false;
+                eventOut.OnActivateEvent.Invoke(buttonName, channelNumber, 0);
             }
             isSelected = true;
             
