@@ -85,7 +85,7 @@ public class ButtonInteraction : MonoBehaviour
         //}
         var serviceProfile = new ServiceProfile("MasterBitch[Killer](TestStuff)", "_osc._udp", 6000, host.AddressList);  
         sd.Advertise(serviceProfile);
-        var test2 = 1;
+        //var test2 = 1;
         
        
     }
@@ -316,8 +316,8 @@ public class ButtonInteraction : MonoBehaviour
         string Address = "/cs/mixer/level";
         var message = new OSCMessage(Address);
         var noteOn = "";
-        var note = 60;
-        var velocity = 100.0f;
+        //var note = 60;
+        //var velocity = 100.0f;
         message.AddValue(OSCValue.String(noteOn));
         //message.AddValue(OSCValue.Int(note));
         //message.AddValue(OSCValue.Float(velocity));

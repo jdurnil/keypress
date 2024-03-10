@@ -40,6 +40,43 @@ public class EventOut : MonoBehaviour
             message.AddValue(OSCValue.Float(value));
 
             Transmitter.Send(message);
+            if(action == "volume")
+            {
+                if (MixSingleton.Instance.MixObject.channels[channel] != null)
+                {
+                    MixSingleton.Instance.MixObject.channels[channel].Volume = value;
+                }
+                
+            } else if(action == "pan")
+            {
+                if (MixSingleton.Instance.MixObject.channels[channel] != null)
+                {
+                    MixSingleton.Instance.MixObject.channels[channel].Pan = value;
+                }
+               
+            } else if(action == "select")
+            {
+                if (MixSingleton.Instance.MixObject.channels[channel] != null)
+                {
+                    MixSingleton.Instance.MixObject.channels[channel].Selected = value == 1 ? true : false;
+                }
+                
+            } else if(action == "mute")
+            {
+                if (MixSingleton.Instance.MixObject.channels[channel] != null)
+                {
+                    MixSingleton.Instance.MixObject.channels[channel].Mute = value == 1 ? true : false;
+                }
+                
+            } else if(action == "solo")
+            {
+                if (MixSingleton.Instance.MixObject.channels[channel] != null)
+                {
+                    MixSingleton.Instance.MixObject.channels[channel].Solo = value == 1 ? true : false;
+                }
+                
+            }
+            
         } else if(action == "EQ")
         {
 

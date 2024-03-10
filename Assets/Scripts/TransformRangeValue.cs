@@ -17,7 +17,7 @@ public class TransformRangeValue : MonoBehaviour
     [Range(0, 1)] public float faderValue;
 
     private Vector3 previousPosition;
-    private bool isPositionSet = false;
+   // private bool isPositionSet = false;
 
     public UnityEvent<float> OnFaderValueChanged;
 

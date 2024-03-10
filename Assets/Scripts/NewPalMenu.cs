@@ -41,6 +41,9 @@ namespace Oculus.Interaction.Samples.PalmMenu
         [SerializeField]
         private AudioSource _hideMenuAudio;
 
+        [SerializeField]
+        public testlerp testlerp;
+
 
 
         private void Start()
@@ -64,12 +67,15 @@ namespace Oculus.Interaction.Samples.PalmMenu
             if (_menuParent.activeSelf)
             {
                 _hideMenuAudio.Play();
+                testlerp.Shrink();
                 _menuParent.SetActive(false);
+
             }
             else
             {
                 _showMenuAudio.Play();
                 _menuParent.SetActive(true);
+                testlerp.Grow();
             }
         }
     }

@@ -14,7 +14,7 @@ public class TransportButtonPress : MonoBehaviour
     public AudioClip sound;
     [SerializeField]
     public string buttonName;
-    private bool isPressed = false;
+    //private bool isPressed = false;
     public EventOut eventOut;
     [SerializeField]
     private Color _selectedColor = Color.red;
@@ -36,7 +36,7 @@ public class TransportButtonPress : MonoBehaviour
               
             eventOut.OnActivateEvent.Invoke(buttonName,0, 1);
             audioSource.PlayOneShot(sound);
-            isPressed = true;
+            //isPressed = true;
           
             isSelected = true;
 
@@ -53,20 +53,5 @@ public class TransportButtonPress : MonoBehaviour
         //testanim.SetBool("Pressed", isPressed);
 
     }
-    public void ReceiveDispatch(int ChannelNumber, float value)
-    {
-        if (0== ChannelNumber)
-        {
-            if (value == 1)
-            {
-                gameObject.GetComponent<Renderer>().material.color = Color.red;
-                isPressed = true;
-            }
-            else
-            {
-                gameObject.GetComponent<Renderer>().material.color = Color.white;
-                isPressed = false;
-            }
-        }
-    }
+   
 }

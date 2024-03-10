@@ -15,7 +15,7 @@ public class MenuButton : MonoBehaviour
     private bool isSelected = false;
     public testlerp testlerp;
 
-    private bool isPressed = false;
+    //private bool isPressed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +36,7 @@ public class MenuButton : MonoBehaviour
             audioSource.PlayOneShot(sound);
             target.SetActive(!target.activeSelf);
             testlerp.Grow();
-            isPressed = true;
+            //isPressed = true;
             
             isSelected = true;
 

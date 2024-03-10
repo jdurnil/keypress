@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using extOSC;
+using System.Linq;
 
 public class Listener : MonoBehaviour
 {
@@ -29,7 +30,23 @@ public class Listener : MonoBehaviour
         {
             var channelstring = addresschannelArray[3];
             int channel;
+            MixChannel currentChannel = new MixChannel();
             bool succeed = int.TryParse(channelstring, out channel);
+            bool channelExists = MixSingleton.Instance.MixObject.channels.Any(x => x.ChannelNumber == channel);
+            if (succeed)
+            {
+                //var channelExists = MixSingleton.Instance.MixObject.channels.FirstOrDefault(x => x.ChannelNumber == channel);
+                if (!channelExists)
+                {
+                    currentChannel = new MixChannel();
+                    currentChannel.ChannelNumber = channel;
+                    //MixSingleton.Instance.MixObject.channels.Add(newChannel);
+                }
+                else
+                {
+                    currentChannel = MixSingleton.Instance.MixObject.channels.FirstOrDefault(x => x.ChannelNumber == channel);
+                }
+            }
 
             if (message.Address.Contains("volume"))
             {
@@ -40,6 +57,7 @@ public class Listener : MonoBehaviour
                 if (channelstring != "master" && succeed)
                 {
                     dispatcher.OnVolumeEvent.Invoke(channel, value);
+                    currentChannel.Volume = value;
                 }
             }
             else if (message.Address.Contains("level-l-real"))
@@ -79,6 +97,7 @@ public class Listener : MonoBehaviour
 
                 message.ToString(out value);
                 dispatcher.OnLabelEvent.Invoke(channel, value);
+                currentChannel.Name = value;
             }
             else if (message.Address.Contains("pan"))
             {
@@ -89,6 +108,7 @@ public class Listener : MonoBehaviour
                 if (channelstring != "master" && succeed)
                 {
                     dispatcher.OnPanEvent.Invoke(channel, value);
+                    currentChannel.Pan = value;
                 }
             }
             else if (message.Address.Contains("mute"))
@@ -100,6 +120,15 @@ public class Listener : MonoBehaviour
                 if (channelstring != "master" && succeed)
                 {
                     dispatcher.OnMuteEvent.Invoke(channel, value);
+                    if(value == 1)
+                    {
+                        currentChannel.Mute = true;
+                    }
+                    else
+                    {
+                        currentChannel.Mute = false;
+                    }
+                    
                 }
             }
             else if (message.Address.Contains("solo"))
@@ -111,6 +140,14 @@ public class Listener : MonoBehaviour
                 if (channelstring != "master" && succeed)
                 {
                     dispatcher.OnSoloEvent.Invoke(channel, value);
+                    if (value == 1)
+                    {
+                        currentChannel.Solo = true;
+                    }
+                    else
+                    {
+                        currentChannel.Solo = false;
+                    }
                 }
             }
             else if (message.Address.Contains("select"))
@@ -122,18 +159,30 @@ public class Listener : MonoBehaviour
                 if (channelstring != "master" && succeed)
                 {
                     dispatcher.OnSelectEvent.Invoke(channel, value);
+                    if (value == 1)
+                    {
+                        currentChannel.Selected = true;
+                    }
+                    else
+                    {
+                        currentChannel.Selected = false;
+                    }
                 }
             }
-            else if (message.Address.Contains("pan"))
+            //else if (message.Address.Contains("pan"))
+            //{
+            //    float value;
+
+            //    message.ToFloat(out value);
+
+            //    if (channelstring != "master" && succeed)
+            //    {
+            //        dispatcher.OnPanEvent.Invoke(channel, value);
+            //    }
+            //}
+            if (!channelExists)
             {
-                float value;
-
-                message.ToFloat(out value);
-
-                if (channelstring != "master" && succeed)
-                {
-                    dispatcher.OnPanEvent.Invoke(channel, value);
-                }
+                MixSingleton.Instance.MixObject.channels.Add(currentChannel);
             }
         }
         else
@@ -154,9 +203,10 @@ public class Listener : MonoBehaviour
             {
                 
             }
+           
         }
        
-
+       
         
     }
 

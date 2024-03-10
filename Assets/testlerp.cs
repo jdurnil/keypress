@@ -9,6 +9,10 @@ public class testlerp : MonoBehaviour
         transform.LeanScale(new Vector3(0.1f, 0.091338f, 0.1f), 1f).setEase(LeanTweenType.easeOutQuart);
     }
 
+    public void Shrink()
+    {
+        transform.LeanScale(new Vector3(0f, 0f, 0f), 1f).setEase(LeanTweenType.easeOutQuart);
+    }
     //public void OnEnable()
     //{
     //    transform.localScale = new Vector3(0f, 0f, 0f);
