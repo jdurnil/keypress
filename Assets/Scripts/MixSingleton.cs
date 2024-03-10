@@ -16,6 +16,7 @@ public class MixSingleton : MonoBehaviour
     {
         if (Instance == null)
         {
+            MixObject = new MixObject();
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
