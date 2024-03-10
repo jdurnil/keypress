@@ -35,7 +35,7 @@ public class MenuButton : MonoBehaviour
                
             audioSource.PlayOneShot(sound);
             target.SetActive(!target.activeSelf);
-            testlerp.Grow();
+            //testlerp.Grow();
             //isPressed = true;
             
             isSelected = true;

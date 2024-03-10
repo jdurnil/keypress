@@ -75,7 +75,8 @@ namespace Oculus.Interaction.Samples.PalmMenu
             {
                 _showMenuAudio.Play();
                 _menuParent.SetActive(true);
-                testlerp.Grow();
+                var scale = new Vector3(1f, 1f, 1f);
+                testlerp.Grow(scale);
             }
         }
     }
