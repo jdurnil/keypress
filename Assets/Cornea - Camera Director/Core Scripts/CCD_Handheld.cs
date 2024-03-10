@@ -5,10 +5,10 @@ public class CCD_Handheld : MonoBehaviour
     private Transform[] CameraPositions = new Transform[1];
 	private float lerpTime = 3000f;                             //lerp time
 	private float currentLerpTime = 0f;                         //for lerp time calculation
-	private int CurrentIndex = 0;                               //current index of the camera position
+	//private int CurrentIndex = 0;                               //current index of the camera position
 	private bool IsActive = false;                              //whether the lerping method is active
 	private float perc;                                         //lerping percentage done
-	private bool LerpRotation = false;                          //whether rotation lerping is on or off
+	//private bool LerpRotation = false;                          //whether rotation lerping is on or off
     private Transform Shaker;                                   //the shaking position transform
 
     private CorneaCameraDirector Cornea;                        //get the main cornea script
