@@ -52,7 +52,8 @@ public class MixButton : MonoBehaviour
             if(!Control.activeSelf)
             {
                 Control.SetActive(!Control.activeSelf);
-                testlerp.Grow();
+                var scale = new Vector3(0.1f, 0.091338f, 0.1f);
+                testlerp.Grow(scale);
                 testlerp2.Shrink();
                 TurnOnTransform();
             }
