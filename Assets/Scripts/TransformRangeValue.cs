@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.Events;
 public class TransformRangeValue : MonoBehaviour
 {
     public bool useRefStart = false;
+    public bool waitForStartFrame = true;
     public Transform startPositionTransform;
     public Vector3 startPosition;
     public bool useRefEnd = false;
@@ -25,6 +27,24 @@ public class TransformRangeValue : MonoBehaviour
     {
         channel = channelNumberReceiver.ChannelNumber;
 
+        if(waitForStartFrame)
+        {
+            CoroutinesManager.Instance.StartCoroutine(WaitForStartFrame());
+        }
+        else
+        {
+            StartComponent();
+        }
+    }
+
+    private IEnumerator WaitForStartFrame()
+    {
+        yield return new WaitForEndOfFrame();
+        StartComponent();
+    }
+
+    private void StartComponent ()
+    {
         if(useRefStart && startPositionTransform == null)
         {
             Debug.LogError("Start position transform is null");
