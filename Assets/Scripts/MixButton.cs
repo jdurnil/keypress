@@ -36,7 +36,7 @@ public class MixButton : MonoBehaviour
         // Now childObjects contains all child GameObjects with the name "MyChild"
 
         //board.SetActive(false);
-
+        
         CoroutinesManager.Instance.StartCoroutine(LateStart());
     }
 
