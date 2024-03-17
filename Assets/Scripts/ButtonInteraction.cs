@@ -8,6 +8,7 @@ using System;
 using extOSC;
 using System.Net;
 using UDP.GetAddress;
+using UnityEditor.ShaderGraph;
 
 
 public class ButtonInteraction : MonoBehaviour
@@ -18,6 +19,8 @@ public class ButtonInteraction : MonoBehaviour
 
     [Header("OSC Settings")]
     //public OSCTransmitter Transmitter;
+    public GameObject ReceiverObject;
+    public testlerp lerp;
     public OSCReceiver Receiver;
     private MulticastService mdns;
     private ServiceDiscovery sd;
@@ -60,6 +63,30 @@ public class ButtonInteraction : MonoBehaviour
         {
             OnButton8Clicked();
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            OnButton9Clicked();
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        { 
+            OnButton10Clicked();
+        }
+    }
+
+    private void OnButton9Clicked()
+    {
+
+        ReceiverObject.SetActive(true);
+        var scale = new Vector3(0.1f, 0.091338f, 0.1f);
+        lerp.Grow(scale);
+    }
+    private void OnButton10Clicked()
+    {
+
+        
+        
+        lerp.Shrink();
+        //ReceiverObject.SetActive(false);
     }
 
     public void OnButton1Clicked()
