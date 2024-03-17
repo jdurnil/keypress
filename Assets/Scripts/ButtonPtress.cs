@@ -17,6 +17,7 @@ public class ButtonPtress : MonoBehaviour
     private bool isPressed = false;
     public EventOut eventOut;
     public ChannelNumberReceiver channelNumberReceiver;
+    public Animator testanim;
     public int channelNumber;
     [SerializeField]
     private Color _selectedColor = Color.red;
@@ -55,7 +56,8 @@ public class ButtonPtress : MonoBehaviour
                 eventOut.OnActivateEvent.Invoke(buttonName, channelNumber, 0);
             }
             isSelected = true;
-            
+            testanim.SetBool("Pressed", isPressed);
+
 
             //gameObject.GetComponent<Renderer>().material.color = _selectedColor;
         } else if(interactableViewInterface.State == InteractableState.Normal)
