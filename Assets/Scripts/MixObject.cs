@@ -21,6 +21,7 @@ public class  MixChannel
     public bool Selected { get; set; }
     public EQ Eq { get; set; }
     public int ChannelNumber { get; set; }
+    public Automation Automation { get; set; }
 }
 
 public class  EQ
@@ -45,5 +46,12 @@ public class EQBand
     public float Gain { get; set; }
     public float Q { get; set; }
     public bool Enabled { get; set; }
+}
+
+public class Automation
+{
+    public bool Latch { get; set; }
+    public bool Touch { get; set; }
+    public bool Read { get; set; }
 }
 
