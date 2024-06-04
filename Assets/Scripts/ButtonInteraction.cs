@@ -77,7 +77,7 @@ public class ButtonInteraction : MonoBehaviour
     {
 
         ReceiverObject.SetActive(true);
-        var scale = new Vector3(0.1f, 0.091338f, 0.1f);
+        var scale = new Vector3(1.0f, 1.0f, 1.0f);
         lerp.Grow(scale);
     }
     private void OnButton10Clicked()

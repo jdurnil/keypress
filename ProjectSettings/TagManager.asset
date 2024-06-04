@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fader
+  - FirstButton
+  - SecondButton
+  - ThirdButton
   layers:
   - Default
   - TransparentFX
